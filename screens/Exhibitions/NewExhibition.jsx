@@ -466,7 +466,10 @@ const SetupProfileScreen = ({ navigation }) => {
           onBlur={handleBlur}
           placeholderTextColor="white"
           value={address}
-          onChangeText={setAddress}
+          onChangeText={(text) => {
+            setErrors({});
+            setAddress(text);
+          }}
         />
         {errors.address ? (
           <Text style={styles.errorMessage}>{errors.address}</Text>
@@ -477,7 +480,10 @@ const SetupProfileScreen = ({ navigation }) => {
           placeholder="PHONE NUMBER"
           placeholderTextColor="white"
           value={contactNumber}
-          onChangeText={setContactNumber}
+          onChangeText={(text) => {
+            setErrors({});
+            setContactNumber(text);
+          }}
           keyboardType="numeric"
           maxLength={10}
         />
@@ -489,7 +495,10 @@ const SetupProfileScreen = ({ navigation }) => {
           placeholder="EMAIL"
           placeholderTextColor="white"
           value={email}
-          onChangeText={setEmail}
+          onChangeText={(text) => {
+            setErrors({});
+            setEmail(text);
+          }}
         />
         {errors.email ? (
           <Text style={styles.errorMessage}>{errors.email}</Text>
@@ -509,7 +518,10 @@ const SetupProfileScreen = ({ navigation }) => {
           placeholder="DESCRIPTION"
           placeholderTextColor="white"
           value={desc}
-          onChangeText={setDesc}
+          onChangeText={(text) => {
+            setErrors({});
+            setDesc(text);
+          }}
           multiline
         />
         {errors.desc ? (
